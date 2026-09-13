@@ -1,9 +1,10 @@
-public class ReverseLetter  {
-    public static void main(String[] args) {
+package org.example.util;
 
- String s = "J@va the be$t!123";
+public class ReverseLetter {
+    public static String reverseLetter(String s) {
 
-        char[] chars = "J@va the be$t!123".toCharArray();пше
+        char[] chars = s.toCharArray();
+
         int left = 0;
         int right = chars.length - 1;
 
@@ -14,7 +15,7 @@ public class ReverseLetter  {
 
             while (left < right && !Character.isLetter(chars[right])) {
                 right--;
-                }
+            }
             char tmp = chars[left];
             chars[left] = chars[right];
             chars[right] = tmp;
@@ -23,6 +24,6 @@ public class ReverseLetter  {
             right--;
         }
 
-        System.out.println(new String(chars));
+        return new String(chars);
     }
 }
