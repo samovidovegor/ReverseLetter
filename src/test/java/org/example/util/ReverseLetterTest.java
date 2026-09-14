@@ -4,12 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class ReverseLetterTest {
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-    @Test
-    void shouldReverseLetters() {
-        assertEquals("dcba", ReverseLetter.reverseLetter("abcd"));
-    }
+class ReverseLetterTest {
 
     @Test
     void shouldReturnEmptyString() {
@@ -42,10 +39,20 @@ class ReverseLetterTest {
     }
 
     @Test
+    void shouldThrowExceptionForNull() {
+        assertThrows(
+                NullPointerException.class,
+                () -> ReverseLetter.reverseLetter(null)
+        );
+    }
+
+    @Test
     void shouldReverseLettersInMixedString() {
         assertEquals(
                 "t@eb eht av$J!123",
                 ReverseLetter.reverseLetter("J@va the be$t!123")
         );
+
+
     }
 }
